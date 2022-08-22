@@ -34,6 +34,10 @@ const App = () => {
   };
 
   const counter = new Date().getTime();
+  const scrollToTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
 
   return (
     <div className="w-full flex flex-col flex justify-center items-center ">
@@ -122,7 +126,10 @@ const App = () => {
           </div>
         );
       })}
-      <button className="absolute text-white font-bold bottom-16 right-16 outline outline-offset-2 outline-blue-400 p-4 rounded-full bg-blue-500">
+      <button
+        onClick={scrollToTop}
+        className="absolute text-white font-bold bottom-16 right-16 outline outline-offset-2 outline-blue-400 p-4 rounded-full bg-blue-500"
+      >
         UP
       </button>
     </div>
