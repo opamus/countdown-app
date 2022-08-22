@@ -22,9 +22,6 @@ const App = () => {
     },
   ];
 
-  console.log(date, cardTitle, repeat, darkMode);
-  console.log(sampleData);
-
   const handleSubmit = (title, date, repeat, darkMode) => {
     if (repeat === 0 || repeat === 1) {
       sampleData.push({
@@ -88,7 +85,10 @@ const App = () => {
           </form>
         </div>
       )}
-      <button onClick={() => setIsOpen(!isOpen)} className="mb-12">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="mb-12 pl-8 pr-8 pt-4 pb-4 border-2 rounded-lg rounded bg-blue-200 drop-shadow-sm"
+      >
         {!isOpen ? "Create new" : "Cancel"}
       </button>
 
