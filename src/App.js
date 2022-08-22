@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +37,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1>Countdown</h1>
+    <div className="w-full flex flex-col flex justify-center items-center">
+      <h1 className="text-5xl font-bold">Countdown</h1>
 
       {isOpen && (
         <div className="FormContainer">
@@ -95,8 +94,11 @@ const App = () => {
 
       {sampleData.map((event, i) => {
         return (
-          <div key={i} className="Container" style={{ background: "#123123" }}>
-            <h2>{event.title}</h2>
+          <div
+            key={i}
+            className="flex flex-col w-96 mb-4 p-4 rounded-3xl border-2 justify-start"
+          >
+            <h2 className="text-2xl font-bold">{event.title}</h2>
             <h2>{event.date}</h2>
           </div>
         );
