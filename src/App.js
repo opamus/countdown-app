@@ -10,13 +10,13 @@ const App = () => {
   const sampleData = [
     {
       title: "Olli's birthday",
-      date: "2022-07-21T10:51:36.790Z",
+      date: "2022-09-04T08:21:36.790Z",
       repeat: "0",
       darkMode: true,
     },
     {
       title: "Holiday in Greece",
-      date: "2022-07-21T10:51:36.790Z",
+      date: "2022-12-21T10:51:36.790Z",
       repeat: "0",
       darkMode: false,
     },
@@ -32,6 +32,8 @@ const App = () => {
       });
     }
   };
+
+  const counter = new Date().getTime();
 
   return (
     <div className="w-full flex flex-col flex justify-center items-center ">
@@ -99,7 +101,24 @@ const App = () => {
             className="flex flex-col w-6/12 mb-4 p-8 rounded-2xl border-2 justify-start drop-shadow-sm bg-gray-100"
           >
             <h2 className="text-2xl font-mono">{event.title}</h2>
-            <h2 className="text-sm font-bold font-mono">{event.date}</h2>
+            <h2 className="text-sm font-bold font-mono">
+              {Math.floor(
+                (new Date(event.date).getTime() - counter) / 1000 / 60 / 60 / 24
+              ) +
+                " days " +
+                Math.floor(
+                  ((new Date(event.date).getTime() - counter) /
+                    1000 /
+                    60 /
+                    60) %
+                    24
+                ) +
+                " hours " +
+                Math.floor(
+                  ((new Date(event.date).getTime() - counter) / 1000 / 60) % 60
+                ) +
+                " minutes left"}
+            </h2>
           </div>
         );
       })}
