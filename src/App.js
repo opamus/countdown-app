@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -130,7 +132,7 @@ const App = () => {
         onClick={scrollToTop}
         className="absolute text-white font-bold bottom-16 right-16 outline outline-offset-2 outline-blue-400 p-4 rounded-full bg-blue-500"
       >
-        UP
+        <FontAwesomeIcon icon={faArrowUp} className="w-7 h-6" />
       </button>
     </div>
   );
