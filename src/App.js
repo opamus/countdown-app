@@ -98,7 +98,7 @@ const App = () => {
         return (
           <div
             key={i}
-            className="flex flex-col w-6/12 mb-4 p-8 rounded-2xl border-2 justify-start drop-shadow-sm bg-gray-100"
+            className="flex flex-col w-6/12 mb-4 pl-4 pr-4 pt-12 pb-12 rounded-2xl border-2 justify-start drop-shadow-sm bg-gray-100 outline outline-offset-2 outline-blue-400 rounded-br-none border-teal-200	"
           >
             <h2 className="text-2xl font-mono">{event.title}</h2>
             <h2 className="text-sm font-bold font-mono">
@@ -122,6 +122,9 @@ const App = () => {
           </div>
         );
       })}
+      <button className="absolute text-white font-bold bottom-16 right-16 outline outline-offset-2 outline-blue-400 p-4 rounded-full bg-blue-500">
+        UP
+      </button>
     </div>
   );
 };
