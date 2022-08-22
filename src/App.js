@@ -37,8 +37,8 @@ const App = () => {
   };
 
   return (
-    <div className="w-full flex flex-col flex justify-center items-center">
-      <h1 className="text-5xl font-bold">Countdown</h1>
+    <div className="w-full flex flex-col flex justify-center items-center ">
+      <h1 className="text-7xl font-bold font-mono mt-8 mb-8">Countdown</h1>
 
       {isOpen && (
         <div className="FormContainer">
@@ -88,7 +88,7 @@ const App = () => {
           </form>
         </div>
       )}
-      <button onClick={() => setIsOpen(!isOpen)} className="Button">
+      <button onClick={() => setIsOpen(!isOpen)} className="mb-12">
         {!isOpen ? "Create new" : "Cancel"}
       </button>
 
@@ -96,10 +96,10 @@ const App = () => {
         return (
           <div
             key={i}
-            className="flex flex-col w-96 mb-4 p-4 rounded-3xl border-2 justify-start"
+            className="flex flex-col w-6/12 mb-4 p-8 rounded-2xl border-2 justify-start drop-shadow-sm bg-gray-100"
           >
-            <h2 className="text-2xl font-bold">{event.title}</h2>
-            <h2>{event.date}</h2>
+            <h2 className="text-2xl font-mono">{event.title}</h2>
+            <h2 className="text-sm font-bold font-mono">{event.date}</h2>
           </div>
         );
       })}
